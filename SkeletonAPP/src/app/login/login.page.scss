@@ -1,0 +1,42 @@
+ion-content {
+    --ion-background-color: #94CEF3;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+ion-toolbar {
+    --ion-background-color: #94CEF3;
+    opacity: 0;
+}   
+
+ion-card {
+    box-shadow: none;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 50px;
+    overflow: visible;
+}
+
+
+.login-foot {
+animation: jump 0.5s infinite alternate;
+display: flex;
+justify-content: space-between; /* Distribuye espacio entre los elementos */
+
+
+}
+
+@keyframes jump {
+    0% {
+        transform: scale(1) translateY(0);
+        }
+        100% {
+        transform: scale(1.1) translateY(-5px);
+    }
+}

@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+
+<div class="ion-text-center cuerpo_page">
+  <ion-img src="assets/images/fondarr.png"/>
+
+
+  <form class="login-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <p class="login-text">
+    </p>
+    <ion-item lines="full">
+      <ion-label></ion-label>
+      <ion-input type="text" class="login-username" required placeholder="Nombre de usuario" formControlName="nombreUsuario"></ion-input>
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label></ion-label>
+      <ion-input type="email" class="login-email" required placeholder="Email" minlength="4" maxlength="25" formControlName="nombreMail"></ion-input>
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" class="login-password" required placeholder="Password"  minlength="4" maxlength="25" formControlName="nombrePassword"></ion-input>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+    </ion-item>
+    <br>
+    <br>
+    <p>La contraseña puede contener solo letras minusculas, mayusculas y numeros, y debe tener al menos 6 caracteres</p>
+    <ion-button expand="block" type="submit" class="login-submit" [routerLink]="['/home']">Login</ion-button>
+  </form>
+  <br>
+  <!-- <ion-button expand="full" fill="clear" href="#" class="login-forgot-pass">Desea registrarse con alguna red social?</ion-button> -->
+  <a>Desea registrarse con alguna red social?</a>
+</div>
+
+</ion-content>

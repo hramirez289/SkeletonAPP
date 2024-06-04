@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+
+  <div class="ion-text-center cuerpo_page">
+    <ion-img src="assets/images/fondarr.png"/>
+
+  <!-- <div>
+    <ion-title class="bienv">Bienvenido a MeditAPP</ion-title>
+  </div> -->
+
+
+
+  <form class="login-form" >
+    <a class="ab">Bienvenido a MeditAPP</a>
+    <br>
+    <br>
+    <ion-item lines="full">
+      <ion-label></ion-label>
+      <ion-input type="email" class="login-username" required placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" class="login-password" required placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-button (click)="enviarDatos()" expand="full" type="submit" class="login-submit">Login</ion-button>
+  </form>
+  <ion-button expand="full" fill="clear" href="#" class="login-forgot-pass">Olvidaste la contraseña?</ion-button>
+</div>
+
+</ion-content>
