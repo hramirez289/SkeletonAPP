@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule  } from '@angular/forms';
+import { SQLiteService } from '../sqlite.service';
 
 @Component({
   selector: 'app-registro',
@@ -10,7 +11,7 @@ export class RegistroPage implements OnInit {
 
   formulario: FormGroup;
 
-  constructor( private fb: FormBuilder) {
+  constructor( private fb: FormBuilder, private SQLite: SQLiteService) {
     this.formulario = this.fb.group({
       nombreUsuario: [''],
       nombreMail: [''],
@@ -18,7 +19,7 @@ export class RegistroPage implements OnInit {
    })
   }
   ngOnInit() {
-
+    this.SQLite.openDatabase()
   }
 
   onSubmit() {

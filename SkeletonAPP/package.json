@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
     "@awesome-cordova-plugins/sqlite": "^6.7.0",
-    "@capacitor/npx cap add androidid": "^6.1.0",
+    "@capacitor-community/sqlite": "^6.0.1",
     "@capacitor/app": "6.0.0",
     "@capacitor/camera": "^6.0.1",
     "@capacitor/core": "^6.1.0",
