@@ -10,6 +10,9 @@ import { SQLiteService } from '../sqlite.service';
 export class RegistroPage implements OnInit {
 
   formulario: FormGroup;
+  nombreUsuario=""
+  nombreMail=""
+  nombrePassword=""
 
   constructor( private fb: FormBuilder, private SQLite: SQLiteService) {
     this.formulario = this.fb.group({
@@ -24,6 +27,8 @@ export class RegistroPage implements OnInit {
 
   onSubmit() {
     localStorage.setItem("infoFormulario", JSON.stringify(this.formulario.value))
+    this.SQLite.addUser(this.nombreUsuario, this.nombreMail, this.nombrePassword)
+    console.log("usuario creado con exito", this.nombreUsuario)
   }
 
 }

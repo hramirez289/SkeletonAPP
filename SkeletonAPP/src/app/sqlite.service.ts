@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacitor-community/sqlite';
+import { Capacitor } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,13 @@ export class SQLiteService {
   constructor() {this.initializePlugin() }
 
   private async initializePlugin() {
-    try {
+    const platform = Capacitor.getPlatform();
+    if (platform === 'ios' || platform === 'android' || platform === 'web') {
       this.sqlite = new SQLiteConnection(CapacitorSQLite);
-    } catch (e) {
-      console.error('Unable to initialize SQLite plugin', e);
+      await this.sqlite.initWebStore()
+    } else {
+      console.warn('Platform not supported for SQLite');
     }
-
-    
   }
 
   public async openDatabase() {
@@ -31,7 +32,7 @@ export class SQLiteService {
     }
   }
 
-  public async creatTabla() {
+  public async creatTabla(): Promise <any> {
     const query = `
       CREATE TABLE IF NOT EXISTS usuario (
         id INTEGER PRIMARY KEY NOT NULL,

@@ -10,6 +10,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,4 +18,8 @@ import { FormsModule } from '@angular/forms';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    defineCustomElements(window);
+  }
+}
